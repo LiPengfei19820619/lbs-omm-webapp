@@ -1,0 +1,25 @@
+
+.colorNested, .containerX {
+    height: 100%;
+  min-height: 384px;
+  background: white;
+}
+header, footer {
+  margin: 0;
+  padding: 0;
+
+  border-color: #eebb55;
+  background: #ffeebb;
+  height: 60px;
+}
+
+.example-sidenav {
+  padding: 20px;
+  background: #dddd88;
+  border-right-width: 10px;
+  border-right-style: solid;
+  border-right-color: red;
+  border-bottom-width: 10px;
+  border-bottom-style: solid;
+  border-bottom-color: red;
+}
