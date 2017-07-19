@@ -5,6 +5,9 @@ import { FormsModule }    from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MdSidenavModule } from '@angular/material';
 import { MdButtonModule, MdIconModule } from '@angular/material';
+import { MdTableModule } from '@angular/material';
+
+import {CdkTableModule} from '@angular/cdk';
 
 import { AppComponent } from './app.component';
 import { AdjnodesComponent } from './topoly/adjnodes.component';
@@ -19,6 +22,8 @@ import { AppRoutingModule } from './app-routing.module'
     MdButtonModule,
     MdIconModule,
     FormsModule,
+    MdTableModule,
+    CdkTableModule,
     AppRoutingModule
   ],
   declarations: [
