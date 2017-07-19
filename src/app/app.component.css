@@ -23,3 +23,8 @@ header, footer {
   border-bottom-style: solid;
   border-bottom-color: red;
 }
+
+example-container, .example-sidenav-content {
+  height: 100%;
+  width: 100%;
+}
