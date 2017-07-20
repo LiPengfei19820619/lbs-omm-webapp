@@ -24,7 +24,7 @@ header, footer {
   border-bottom-color: red;
 }
 
-example-container, .example-sidenav-content {
+example-container, .example-sidenav-content, .mat-sidenav-container {
   height: 100%;
   width: 100%;
 }

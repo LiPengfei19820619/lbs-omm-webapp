@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import {Http, Response} from '@angular/http';
 import {DataSource} from '@angular/cdk';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
@@ -12,63 +12,52 @@ import 'rxjs/add/operator/map';
   templateUrl: './adjnodes.component.html',
   styleUrls: ['./adjnodes.component.css']
 })
-export class AdjnodesComponent implements OnInit {
-  displayedColumns = ['userId', 'userName', 'progress', 'color'];
-  exampleDatabase = new ExampleDatabase();
+export class AdjnodesComponent{
+  displayedColumns = ['id', 'ipaddr', 'ipver', 'port', 'hostname', 'domain', 'type'];
+  exampleDatabase : ExampleHttpDatabase | null;
   dataSource: ExampleDataSource | null;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(http: Http) {
+    this.exampleDatabase = new ExampleHttpDatabase(http);
     this.dataSource = new ExampleDataSource(this.exampleDatabase);
   }
 }
 
-/** Constants used to fill up our data base. */
-const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
 
-export interface UserData {
-id: string;
-name: string;
-progress: string;
-color: string;
+export interface AdjacentNode {
+  id: string;
+  ipaddr: string;
+  ipver: string;
+  port: string;
+  hostname: string;
+  domain: string;
+  type: string;
 }
 
 /** An example database that the data source uses to retrieve data for the table. */
-export class ExampleDatabase {
-  /** Stream that emits whenever the data has been modified. */
-  dataChange: BehaviorSubject<UserData[]> = new BehaviorSubject<UserData[]>([]);
-  get data(): UserData[] { return this.dataChange.value; }
-
-  constructor() {
-    // Fill up the database with 100 users.
-    for (let i = 0; i < 100; i++) { this.addUser(); }
-  }
-
-  /** Adds a new user to the database. */
-  addUser() {
-    const copiedData = this.data.slice();
-    copiedData.push(this.createNewUser());
-    this.dataChange.next(copiedData);
-  }
-
-  /** Builds and returns a new User. */
-  private createNewUser() {
-    const name =
-        NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-        NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-    return {
-      id: (this.data.length + 1).toString(),
-      name: name,
-      progress: Math.round(Math.random() * 100).toString(),
-      color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-    };
-  }
+export class ExampleHttpDatabase {
+  private issuesUrl = 'http://10.43.31.56:9090/api/v1/adjnodes';  // URL to web API
+  
+    getRepoIssues(): Observable<AdjacentNode[]> {
+      return this.http.get(this.issuesUrl)
+                      .map(this.extractData)
+    }
+    
+    extractData(result: Response): AdjacentNode[] {
+      return result.json().map(node => {
+        return {
+          id: node.id,
+          ipaddr: node.state,
+          ipver: node.title,
+          port: node.port,
+          hostname: node.hostname,
+          domain: node.domain,
+          type: node.type,
+        }
+      });
+    }
+    
+    constructor(private http: Http) {}
 }
 
 /**
@@ -78,14 +67,14 @@ export class ExampleDatabase {
 * the underlying data. Instead, it only needs to take the data and send the table exactly what
 * should be rendered.
 */
-export class ExampleDataSource extends DataSource<any> {
-  constructor(private _exampleDatabase: ExampleDatabase) {
+export class ExampleDataSource extends DataSource<AdjacentNode> {
+  constructor(private _exampleDatabase: ExampleHttpDatabase) {
     super();
   }
 
   /** Connect function called by the table to retrieve one stream containing the data to render. */
-  connect(): Observable<UserData[]> {
-    return this._exampleDatabase.dataChange;
+  connect(): Observable<AdjacentNode[]> {
+    return this._exampleDatabase.getRepoIssues();
   }
 
   disconnect() {}
