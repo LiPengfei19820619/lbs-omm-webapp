@@ -5,27 +5,45 @@
           The actual rendered columns are set as a property on the row definition" -->
 
     <!-- ID Column -->
-    <ng-container cdkColumnDef="userId">
+    <ng-container cdkColumnDef="id">
       <md-header-cell *cdkHeaderCellDef> ID </md-header-cell>
       <md-cell *cdkCellDef="let row"> {{row.id}} </md-cell>
     </ng-container>
 
-    <!-- Progress Column -->
-    <ng-container cdkColumnDef="progress">
-      <md-header-cell *cdkHeaderCellDef> Progress </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.progress}}% </md-cell>
+    <!-- IPAddr Column -->
+    <ng-container cdkColumnDef="ipaddr">
+      <md-header-cell *cdkHeaderCellDef> IPAddr </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.ipaddr}}% </md-cell>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container cdkColumnDef="userName">
-      <md-header-cell *cdkHeaderCellDef> Name </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.name}} </md-cell>
+    <!-- IPVer Column -->
+    <ng-container cdkColumnDef="ipver">
+      <md-header-cell *cdkHeaderCellDef> IPVer </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.ipver}} </md-cell>
     </ng-container>
 
-    <!-- Color Column -->
-    <ng-container cdkColumnDef="color">
-      <md-header-cell *cdkHeaderCellDef>Color</md-header-cell>
-      <md-cell *cdkCellDef="let row" [style.color]="row.color"> {{row.color}} </md-cell>
+    <!-- Port Column -->
+    <ng-container cdkColumnDef="port">
+      <md-header-cell *cdkHeaderCellDef>Port</md-header-cell>
+      <md-cell *cdkCellDef="let row" [style.color]="row.port"> {{row.color}} </md-cell>
+    </ng-container>
+
+    <!-- HostName Column -->
+    <ng-container cdkColumnDef="hostname">
+      <md-header-cell *cdkHeaderCellDef>HostName</md-header-cell>
+      <md-cell *cdkCellDef="let row" [style.color]="row.hostname"> {{row.color}} </md-cell>
+    </ng-container>
+
+    <!-- Domain Column -->
+    <ng-container cdkColumnDef="domain">
+      <md-header-cell *cdkHeaderCellDef>Domain</md-header-cell>
+      <md-cell *cdkCellDef="let row" [style.color]="row.domain"> {{row.color}} </md-cell>
+    </ng-container>
+
+    <!-- Type Column -->
+    <ng-container cdkColumnDef="type">
+      <md-header-cell *cdkHeaderCellDef>Type</md-header-cell>
+      <md-cell *cdkCellDef="let row" [style.color]="row.type"> {{row.color}} </md-cell>
     </ng-container>
 
     <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>

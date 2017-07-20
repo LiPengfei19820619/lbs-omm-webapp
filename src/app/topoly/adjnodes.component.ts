@@ -36,7 +36,7 @@ export interface AdjacentNode {
 
 /** An example database that the data source uses to retrieve data for the table. */
 export class ExampleHttpDatabase {
-  private issuesUrl = 'http://10.43.31.56:9090/api/v1/adjnodes';  // URL to web API
+  private issuesUrl = './nodes.json';  // URL to web API
   
     getRepoIssues(): Observable<AdjacentNode[]> {
       return this.http.get(this.issuesUrl)
