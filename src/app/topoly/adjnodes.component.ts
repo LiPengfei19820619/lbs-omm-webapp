@@ -21,6 +21,10 @@ export class AdjnodesComponent{
     this.exampleDatabase = new ExampleHttpDatabase(http);
     this.dataSource = new ExampleDataSource(this.exampleDatabase);
   }
+
+  rowClicked(row: AdjacentNode){
+    alert("clicked:" + row.id)
+  }
 }
 
 
