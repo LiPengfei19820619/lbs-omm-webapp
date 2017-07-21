@@ -25,18 +25,18 @@ export class AdjnodesComponent{
 
 
 export interface AdjacentNode {
-  id: string;
+  id: number;
   ipaddr: string;
-  ipver: string;
-  port: string;
+  ipver: number;
+  port: number;
   hostname: string;
   domain: string;
-  type: string;
+  type: number;
 }
 
 /** An example database that the data source uses to retrieve data for the table. */
 export class ExampleHttpDatabase {
-  private issuesUrl = './nodes.json';  // URL to web API
+  private issuesUrl = 'http://localhost:9090/api/v1/adjnodes';  // URL to web API
   
     getRepoIssues(): Observable<AdjacentNode[]> {
       return this.http.get(this.issuesUrl)
@@ -47,8 +47,8 @@ export class ExampleHttpDatabase {
       return result.json().map(node => {
         return {
           id: node.id,
-          ipaddr: node.state,
-          ipver: node.title,
+          ipaddr: node.ipaddr,
+          ipver: node.ipver,
           port: node.port,
           hostname: node.hostname,
           domain: node.domain,
