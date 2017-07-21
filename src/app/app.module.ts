@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MdSidenavModule } from '@angular/material';
 import { MdButtonModule, MdIconModule } from '@angular/material';
 import { MdTableModule } from '@angular/material';
+import { MdToolbarModule } from '@angular/material';
 
 import {CdkTableModule} from '@angular/cdk';
 
@@ -24,6 +25,7 @@ import { AppRoutingModule } from './app-routing.module'
     MdSidenavModule,
     MdButtonModule,
     MdIconModule,
+    MdToolbarModule,
     FormsModule,
     MdTableModule,
     CdkTableModule,

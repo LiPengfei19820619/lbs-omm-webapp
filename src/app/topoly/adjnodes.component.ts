@@ -13,7 +13,7 @@ import { AdjnodeService } from './adjnode.service';
   styleUrls: ['./adjnodes.component.css']
 })
 export class AdjnodesComponent{
-  displayedColumns = ['id', 'ipaddr', 'ipver', 'port', 'hostname', 'domain', 'type'];
+  displayedColumns = ['operation', 'id', 'ipaddr', 'ipver', 'port', 'hostname', 'domain', 'type'];
   
   dataSource: AdjnodeDataSource | null;
 

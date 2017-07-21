@@ -1,8 +1,25 @@
+<md-toolbar color="warn">
+  <span>所有邻接节点</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span><a md-raised-button routerLink=".">Raised button</a>
+        <a md-button routerLink=".">Flat button</a>
+  </span>
+</md-toolbar>
+
 <div class="example-container mat-elevation-z8">
   <md-table #table [dataSource]="dataSource">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Operation Column -->
+    <ng-container cdkColumnDef="operation">
+      <md-header-cell *cdkHeaderCellDef>  </md-header-cell>
+      <md-cell *cdkCellDef="let row"> <a md-button routerLink=".">编辑{{row.id}}</a><a md-button routerLink=".">删除</a> </md-cell>
+    </ng-container>
 
     <!-- ID Column -->
     <ng-container cdkColumnDef="id">
