@@ -15,10 +15,10 @@ import { AdjnodeService } from './adjnode.service';
 export class AdjnodesComponent{
   displayedColumns = ['id', 'ipaddr', 'ipver', 'port', 'hostname', 'domain', 'type'];
   
-  dataSource: ExampleDataSource | null;
+  dataSource: AdjnodeDataSource | null;
 
   constructor(adjnodeService: AdjnodeService) {
-    this.dataSource = new ExampleDataSource(adjnodeService);
+    this.dataSource = new AdjnodeDataSource(adjnodeService);
   }
 
   rowClicked(row: Adjnode){
@@ -34,7 +34,7 @@ export class AdjnodesComponent{
 * the underlying data. Instead, it only needs to take the data and send the table exactly what
 * should be rendered.
 */
-export class ExampleDataSource extends DataSource<Adjnode> {
+export class AdjnodeDataSource extends DataSource<Adjnode> {
   constructor(private _adjnodeService: AdjnodeService) {
     super();
   }
