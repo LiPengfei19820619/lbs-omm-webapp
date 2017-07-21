@@ -1,26 +1,34 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
 
-import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Observable';
+
+import 'rxjs/add/operator/map';
 
 import { Adjnode } from './Adjnode';
 
 @Injectable()
 export class AdjnodeService {
-  private adjnodesUrl = 'http://localhost:9090/api/v1/adjnodes';  // URL to web api
+  private adjnodesUrl = 'http://localhost:8080/v1/adjnodes';  // URL to web api
 
   constructor(private http: Http) { }
 
-  getAdjnodes(): Promise<Adjnode[]> {
+  getAdjnodes(): Observable<Adjnode[]> {
     return this.http.get(this.adjnodesUrl)
-               .toPromise()
-               .then(response => response.json().data as Adjnode[])
-               .catch(this.handleError);
+                    .map(this.extractData)
   }
 
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
+  extractData(result: Response): Adjnode[] {
+    return result.json().map(node => {
+      return {
+        id: node.id,
+        ipaddr: node.ipaddr,
+        ipver: node.ipver,
+        port: node.port,
+        hostname: node.hostname,
+        domain: node.domain,
+        type: node.type,
+      }
+    });
   }
-
 }

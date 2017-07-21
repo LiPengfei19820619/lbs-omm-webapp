@@ -12,6 +12,7 @@ import {CdkTableModule} from '@angular/cdk';
 
 import { AppComponent } from './app.component';
 import { AdjnodesComponent } from './topoly/adjnodes.component';
+import { AdjnodeService } from './topoly/adjnode.service';
 
 import { AppRoutingModule } from './app-routing.module'
 
@@ -33,7 +34,7 @@ import { AppRoutingModule } from './app-routing.module'
     AdjnodesComponent
   ],
   
-  providers: [],
+  providers: [AdjnodeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
