@@ -1,12 +1,18 @@
-<md-toolbar color="warn">
+<md-toolbar>
   <span>所有邻接节点</span>
 
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
 
-  <span><a md-raised-button routerLink=".">Raised button</a>
-        <a md-button routerLink=".">Flat button</a>
+  <span><a md-fab mdTooltip="增加一个新的邻接节点" routerLink="."><md-icon>add</md-icon></a>
   </span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
 </md-toolbar>
 
 <div class="example-container mat-elevation-z8">
@@ -18,7 +24,7 @@
     <!-- Operation Column -->
     <ng-container cdkColumnDef="operation">
       <md-header-cell *cdkHeaderCellDef>  </md-header-cell>
-      <md-cell *cdkCellDef="let row"> <a md-button routerLink=".">编辑{{row.id}}</a><a md-button routerLink=".">删除</a> </md-cell>
+      <md-cell *cdkCellDef="let row"> <a md-button routerLink=".">编辑</a><a md-button routerLink=".">删除</a> </md-cell>
     </ng-container>
 
     <!-- ID Column -->

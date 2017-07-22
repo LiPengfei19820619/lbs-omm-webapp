@@ -9,7 +9,7 @@ import { Adjnode } from './Adjnode';
 
 @Injectable()
 export class AdjnodeService {
-  private adjnodesUrl = 'http://localhost:8080/v1/adjnodes';  // URL to web api
+  private adjnodesUrl = 'http://localhost:9090/api/v1/adjnodes';  // URL to web api
 
   constructor(private http: Http) { }
 

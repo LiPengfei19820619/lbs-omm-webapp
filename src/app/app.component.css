@@ -27,4 +27,5 @@ header, footer {
 .example-sidenav-content, .mat-sidenav-container {
   height: 100%;
   width: 100%;
+  min-width: 780px;
 }

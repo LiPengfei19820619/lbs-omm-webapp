@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule }    from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MdSidenavModule } from '@angular/material';
 import { MdButtonModule, MdIconModule } from '@angular/material';
 import { MdTableModule } from '@angular/material';
 import { MdToolbarModule } from '@angular/material';
+import { MdTooltipModule } from '@angular/material';
 
 import {CdkTableModule} from '@angular/cdk';
 
@@ -20,12 +22,14 @@ import { AppRoutingModule } from './app-routing.module'
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule,
     FlexLayoutModule,
     MdSidenavModule,
     MdButtonModule,
     MdIconModule,
     MdToolbarModule,
+    MdTooltipModule,
     FormsModule,
     MdTableModule,
     CdkTableModule,
