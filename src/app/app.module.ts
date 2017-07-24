@@ -12,6 +12,7 @@ import { MdTableModule } from '@angular/material';
 import { MdToolbarModule } from '@angular/material';
 import { MdTooltipModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
+import { MdListModule } from '@angular/material';
 
 import {CdkTableModule} from '@angular/cdk';
 
@@ -34,6 +35,7 @@ import { AddAdjnodeComponent } from './topoly/add-adjnode.component'
     MdToolbarModule,
     MdTooltipModule,
     MdInputModule,
+    MdListModule,
     FormsModule,
     ReactiveFormsModule,
     MdTableModule,

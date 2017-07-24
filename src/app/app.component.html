@@ -18,11 +18,11 @@
         <md-sidenav #sidenav mode="side" opened="false" class="example-sidenav">
           <nav>
             <h3>网络拓扑配置</h3>
-            <ul>
-              <li><a routerLink="/adjnodes" routerLinkActive="active">邻接节点配置</a></li>
-              <li>增加邻接节点</li>
-              <li>修改邻接节点</li>
-            </ul>
+            <md-nav-list dense>
+              <a md-list-item disableRipple routerLink="/adjnodes" routerLinkActive="active">邻接节点配置</a>
+              <a md-list-item routerLink="/add-adjnode" routerLinkActive="active">增加邻接节点</a>
+              <a md-list-item routerLink="/adjnodes" routerLinkActive="active">修改邻接节点</a>
+            </md-nav-list>
           </nav>
           
         </md-sidenav>
