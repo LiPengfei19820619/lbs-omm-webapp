@@ -37,6 +37,12 @@ export class AddAdjnodeComponent implements OnChanges {
   }
 
   onSubmit() {
-    alert("nodeid:" + this.adjnodeForm.value.id);
+    this.node = this.adjnodeForm.value;
+    alert("submit, nodeid:" + JSON.stringify(this.node));
+    this.adjnodeService.create(this.node).subscribe();
+  }
+
+  cancel() {
+    alert("cancel");
   }
 }

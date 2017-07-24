@@ -20,8 +20,10 @@ export class AdjnodeService {
   }
 
   create(node: Adjnode): Observable<Adjnode> {
+    console.log("adjnode.service:create");
     return this.http
-        .post(this.adjnodesUrl, JSON.stringify(node), {headers: this.headers});
+        .post(this.adjnodesUrl, JSON.stringify(node), {headers: this.headers})
+        .map(res => res.json());
   }
 
   extractData(result: Response): Adjnode[] {
