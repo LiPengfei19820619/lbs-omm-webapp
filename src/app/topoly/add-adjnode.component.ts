@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { Adjnode } from './adjnode';
 import { AdjnodeService } from './adjnode.service';
@@ -16,7 +17,8 @@ export class AddAdjnodeComponent implements OnChanges {
 
   constructor(
     private fb: FormBuilder,
-    private adjnodeService: AdjnodeService) {
+    private adjnodeService: AdjnodeService,
+    private route: Router) {
 
       this.createForm();
   }
@@ -39,7 +41,12 @@ export class AddAdjnodeComponent implements OnChanges {
   onSubmit() {
     this.node = this.adjnodeForm.value;
     alert("submit, nodeid:" + JSON.stringify(this.node));
-    this.adjnodeService.create(this.node).subscribe();
+    this.adjnodeService.create(this.node)
+                       .subscribe(node => {
+                                      alert("node:" + JSON.stringify(node));
+                                      this.route.navigate(['adjnodes']);
+                        },
+                                  err => alert(err.message));
   }
 
   cancel() {
