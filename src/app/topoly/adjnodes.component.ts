@@ -21,8 +21,10 @@ export class AdjnodesComponent{
     this.dataSource = new AdjnodeDataSource(adjnodeService);
   }
 
-  rowClicked(row: Adjnode){
-    alert("clicked:" + row.id)
+  deleteNode(row: Adjnode){
+    if (confirm("是否确认删除此节点，节点号: " + row.id)) {
+      alert("deleted node: " + row.id)
+    }
   }
 }
 

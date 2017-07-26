@@ -26,7 +26,7 @@
       <md-header-cell *cdkHeaderCellDef>  </md-header-cell>
       <md-cell *cdkCellDef="let row">
         <a md-button mdTooltip="修改此邻接节点配置" routerLink="."><md-icon>edit</md-icon></a>
-        <a md-button mdTooltip="删除此邻接节点配置" routerLink="."><md-icon>delete</md-icon></a>
+        <a md-button mdTooltip="删除此邻接节点配置" (click)="deleteNode(row)"><md-icon>delete</md-icon></a>
       </md-cell>
     </ng-container>
 
@@ -73,6 +73,6 @@
     </ng-container>
 
     <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
-    <md-row *cdkRowDef="let row; columns: displayedColumns;" (click)="rowClicked(row)"></md-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
   </md-table>
 </div>
