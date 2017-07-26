@@ -18,17 +18,47 @@
         <md-sidenav #sidenav mode="side" opened="false" class="example-sidenav">
           <nav>
             <div id="topoly_config" class="nav_level_1">
-                <button md-button>网络拓扑配置</button>
+                <button md-button>网络拓扑配置<md-icon>keyboard_arrow_right</md-icon></button>
                 <div id="adjnodes_config" class="nav_level_2">
                   <button md-button>邻接节点配置</button>
                   <div class="nav_level_3">
                       <md-nav-list dense>
-                        <a md-list-item disableRipple routerLink="/adjnodes" routerLinkActive="active">邻接节点配置</a>
+                        <a md-list-item routerLink="/adjnodes" routerLinkActive="active">查看邻接节点</a>
                         <a md-list-item routerLink="/add-adjnode" routerLinkActive="active">增加邻接节点</a>
                         <a md-list-item routerLink="/adjnodes" routerLinkActive="active">修改邻接节点</a>
                       </md-nav-list>
                   </div>
                 </div>
+                <div id="nodegroup_config" class="nav_level_2">
+                  <button md-button>节点组配置</button>
+                  <div class="nav_level_3">
+                      <md-nav-list dense>
+                        <a md-list-item routerLink="/adjnodes" routerLinkActive="active">查看节点组</a>
+                        <a md-list-item routerLink="/add-adjnode" routerLinkActive="active">增加节点组</a>
+                        <a md-list-item routerLink="/adjnodes" routerLinkActive="active">修改节点组</a>
+                      </md-nav-list>
+                  </div>
+                </div>
+                <div id="node_in_group_config" class="nav_level_2">
+                  <button md-button>节点组内节点配置</button>
+                  <div class="nav_level_3">
+                      <md-nav-list dense>
+                        <a md-list-item routerLink="/adjnodes" routerLinkActive="active">查看节点组内节点</a>
+                        <a md-list-item routerLink="/add-adjnode" routerLinkActive="active">增加节点组内节点</a>
+                        <a md-list-item routerLink="/adjnodes" routerLinkActive="active">删除节点组内节点</a>
+                      </md-nav-list>
+                  </div>
+                </div>
+            </div>
+            <div id="securityctrl_config" class="nav_level_1">
+              <button md-button>安全管控属性配置</button>
+              <div class="nav_level_2">
+                <md-nav-list dense>
+                  <a md-list-item routerLink="/adjnodes" routerLinkActive="active">查看安全管控配置</a>
+                  <a md-list-item routerLink="/add-adjnode" routerLinkActive="active">增加安全管控配置</a>
+                  <a md-list-item routerLink="/adjnodes" routerLinkActive="active">修改安全管控配置</a>
+                </md-nav-list>
+              </div>
             </div>
           </nav>
           
@@ -39,7 +69,11 @@
         
       </md-sidenav-container>
     </div>
-    <footer>footer</footer>
+    <footer fxLayout="row" fxLayoutAlign="space-around center">
+      <div>小李飞刀 版权所有</div>
+      <div>ZTE IMS CCN开发四部</div>
+      <div>Powered by Angular2 And Material Design 2.0</div>
+    </footer>
   </div>
 </div>
 

@@ -15,13 +15,13 @@ header, footer {
 
 .example-sidenav {
   padding: 20px;
-  background: #dddd88;
+  /*background: #dddd88;
   border-right-width: 10px;
   border-right-style: solid;
   border-right-color: red;
   border-bottom-width: 10px;
   border-bottom-style: solid;
-  border-bottom-color: red;
+  border-bottom-color: red;*/
 }
 
 .example-sidenav-content, .mat-sidenav-container {

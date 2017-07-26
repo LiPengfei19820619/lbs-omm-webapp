@@ -24,7 +24,10 @@
     <!-- Operation Column -->
     <ng-container cdkColumnDef="operation">
       <md-header-cell *cdkHeaderCellDef>  </md-header-cell>
-      <md-cell *cdkCellDef="let row"> <a md-button routerLink=".">编辑</a><a md-button routerLink=".">删除</a> </md-cell>
+      <md-cell *cdkCellDef="let row">
+        <a md-button mdTooltip="修改此邻接节点配置" routerLink="."><md-icon>edit</md-icon></a>
+        <a md-button mdTooltip="删除此邻接节点配置" routerLink="."><md-icon>delete</md-icon></a>
+      </md-cell>
     </ng-container>
 
     <!-- ID Column -->
