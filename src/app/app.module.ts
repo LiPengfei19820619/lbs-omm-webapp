@@ -21,7 +21,8 @@ import { AdjnodesComponent } from './topoly/adjnodes.component';
 import { AdjnodeService } from './topoly/adjnode.service';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AddAdjnodeComponent } from './topoly/add-adjnode.component'
+import { AddAdjnodeComponent } from './topoly/add-adjnode.component';
+import { ModAdjnodeComponent } from './topoly/mod-adjnode.component'
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { AddAdjnodeComponent } from './topoly/add-adjnode.component'
   declarations: [
     AppComponent,
     AdjnodesComponent,
-    AddAdjnodeComponent
+    AddAdjnodeComponent,
+    ModAdjnodeComponent
   ],
   
   providers: [AdjnodeService],
