@@ -8,7 +8,7 @@ import { ModAdjnodeComponent } from './topoly/mod-adjnode.component'
 const routes : Routes = [
   {path: 'adjnodes', component: AdjnodesComponent},
   {path: 'add-adjnode', component: AddAdjnodeComponent},
-  {path: 'mod-adjnode', component: ModAdjnodeComponent}
+  {path: 'mod-adjnode/:id', component: ModAdjnodeComponent}
 ];
 
 @NgModule({
