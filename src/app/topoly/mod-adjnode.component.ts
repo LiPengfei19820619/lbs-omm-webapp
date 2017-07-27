@@ -22,9 +22,13 @@ export class ModAdjnodeComponent implements OnInit {
     private location: Location
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.route.paramMap
-              .switchMap((params: ParamMap) => this.adjnodeService.getAdjnode(+params.get('id')))
+              .switchMap((params: ParamMap) => {
+                let id = +params.get('id');
+                alert("id:"+id);
+                return this.adjnodeService.getAdjnode(+id);
+              } )
               .subscribe(node => this.node = node);
   }
 

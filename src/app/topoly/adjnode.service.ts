@@ -21,7 +21,7 @@ export class AdjnodeService {
   }
 
   getAdjnode(id: number): Observable<Adjnode> {
-    const url = `${this.adjnodesUrl}/{id}`;
+    const url = `${this.adjnodesUrl}/${id}`;
 
     return this.http.get(url)
                     .map(res => res.json());
