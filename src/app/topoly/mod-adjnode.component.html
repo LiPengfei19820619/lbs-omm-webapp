@@ -1,3 +1,54 @@
 <div *ngIf="node">
   mod-adjnode works! node id: {{node.id}}
 </div>
+
+<md-toolbar>修改邻接节点</md-toolbar>
+
+<form [formGroup]="adjnodeForm" (ngSubmit)="onSubmit()" novalidate class="add-adjnode-form">
+  <md-input-container class="add-adjnode-full-width">
+    <input type="number" mdInput placeholder="节点号" formControlName="id">
+  </md-input-container>
+
+  <table class="add-adjnode-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-input-container class="add-adjnode-full-width">
+          <input mdInput placeholder="IP地址" formControlName="ipaddr">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container class="add-adjnode-full-width">
+          <input type="number" mdInput placeholder="IP版本" value="4" formControlName="ipver">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container class="add-adjnode-full-width">
+          <input type="number" mdInput placeholder="端口" formControlName="port">
+        </md-input-container>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <md-input-container class="add-adjnode-full-width">
+          <input mdInput placeholder="主机名" formControlName="hostname">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container class="add-adjnode-full-width">
+          <input mdInput placeholder="域名" formControlName="domain">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container class="add-adjnode-full-width">
+          <input type="number" mdInput placeholder="设备类型" value="1" formControlName="type">
+        </md-input-container>
+      </td>
+    </tr>
+  </table>
+
+  <button md-fab type="submit"><md-icon>check</md-icon>确定</button>  &nbsp;
+  <button md-fab (click)="cancel()"><md-icon>cancel</md-icon>取消</button>
+</form>
+
+
