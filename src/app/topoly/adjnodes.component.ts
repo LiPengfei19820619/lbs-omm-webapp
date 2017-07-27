@@ -17,13 +17,17 @@ export class AdjnodesComponent{
   
   dataSource: AdjnodeDataSource | null;
 
-  constructor(adjnodeService: AdjnodeService) {
+  constructor(private adjnodeService: AdjnodeService) {
     this.dataSource = new AdjnodeDataSource(adjnodeService);
   }
 
   deleteNode(row: Adjnode){
     if (confirm("是否确认删除此节点，节点号: " + row.id)) {
-      alert("deleted node: " + row.id)
+      this.adjnodeService.delete(row.id)
+      .subscribe(res => {
+        alert("删除节点成功");
+      },
+      err => alert(err.manage));
     }
   }
 }

@@ -9,8 +9,10 @@ header, footer {
   padding: 0;
 
   border-color: #eebb55;
-  background: #ffeebb;
-  height: 60px;
+  /*background: #ffeebb;*/
+  background: #6F6FFD;
+  height: 40px;
+  color: #ffffff;
 }
 
 .example-sidenav {
