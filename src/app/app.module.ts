@@ -24,6 +24,9 @@ import { ModAdjnodeComponent } from './topoly/adjnode/mod-adjnode.component';
 import { AdjnodesComponent } from './topoly/adjnode/adjnodes.component';
 import { AdjnodeService } from './topoly/adjnode/adjnode.service';
 
+import { NodegroupsComponent } from './topoly/nodegroup/nodegroups.component';
+import { NodegroupService } from './topoly/nodegroup/nodegroup.service';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -47,10 +50,11 @@ import { AdjnodeService } from './topoly/adjnode/adjnode.service';
     AppComponent,
     AdjnodesComponent,
     AddAdjnodeComponent,
-    ModAdjnodeComponent
+    ModAdjnodeComponent,
+    NodegroupsComponent
   ],
   
-  providers: [AdjnodeService],
+  providers: [AdjnodeService, NodegroupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

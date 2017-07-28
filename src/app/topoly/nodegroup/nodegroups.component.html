@@ -1,0 +1,55 @@
+<md-toolbar>
+  <span>所有节点组</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span><a md-fab mdTooltip="增加一个新的节点组" routerLink="../add-adjnode"><md-icon>add</md-icon></a>
+  </span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+</md-toolbar>
+
+<div class="example-container mat-elevation-z8">
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Operation Column -->
+    <ng-container cdkColumnDef="operation">
+      <md-header-cell *cdkHeaderCellDef>  </md-header-cell>
+      <md-cell *cdkCellDef="let row">
+        <a md-button mdTooltip="修改此邻接节点配置" [routerLink]="['/mod-adjnode', row.id]"><md-icon>edit</md-icon></a>
+        <a md-button mdTooltip="删除此邻接节点配置" (click)="deleteNode(row)"><md-icon>delete</md-icon></a>
+      </md-cell>
+    </ng-container>
+
+    <!-- ID Column -->
+    <ng-container cdkColumnDef="id">
+      <md-header-cell *cdkHeaderCellDef> ID </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.id}} </md-cell>
+    </ng-container>
+
+    <!-- Type Column -->
+    <ng-container cdkColumnDef="type">
+      <md-header-cell *cdkHeaderCellDef>节点组类型</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.type}} </md-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container cdkColumnDef="name">
+      <md-header-cell *cdkHeaderCellDef> 节点组名称 </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.name}} </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>
+
