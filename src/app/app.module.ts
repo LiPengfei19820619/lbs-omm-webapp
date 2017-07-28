@@ -17,12 +17,12 @@ import { MdListModule } from '@angular/material';
 import {CdkTableModule} from '@angular/cdk';
 
 import { AppComponent } from './app.component';
-import { AdjnodesComponent } from './topoly/adjnodes.component';
-import { AdjnodeService } from './topoly/adjnode.service';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AddAdjnodeComponent } from './topoly/add-adjnode.component';
-import { ModAdjnodeComponent } from './topoly/mod-adjnode.component'
+
+import { AddAdjnodeComponent } from './topoly/adjnode/add-adjnode.component';
+import { ModAdjnodeComponent } from './topoly/adjnode/mod-adjnode.component';
+import { AdjnodesComponent } from './topoly/adjnode/adjnodes.component';
+import { AdjnodeService } from './topoly/adjnode/adjnode.service';
 
 @NgModule({
   imports: [
