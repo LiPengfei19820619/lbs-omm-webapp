@@ -43,3 +43,20 @@ header, footer {
 .nav_level_3 {
   padding-left: 10px;
 }
+
+.vertical-menu-item {
+  text-align: left;
+}
+
+.menu-icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4px;
+
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  width: 24px;
+}

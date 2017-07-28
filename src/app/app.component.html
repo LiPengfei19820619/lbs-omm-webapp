@@ -1,7 +1,7 @@
 <!--The whole content below can be removed with the new code.-->
 <div class="containerX">
   <div class="colorNested box" fxLayout="column">
-    <header>
+    <header  fxLayout="row" fxLayoutAlign="start center">
       <button md-button title="显示侧边菜单" class="example-fab" (click)="sidenav.toggle()">
         <span class="mat-button-wrapper">
           <md-icon role="img" svgicon="menu" aria-label="menu" class="mat-icon sidenav-open">
@@ -18,7 +18,7 @@
         <md-sidenav #sidenav mode="side" opened="false" class="example-sidenav">
           <nav>
             <div id="topoly_config" class="nav_level_1">
-                <button md-button>网络拓扑配置<md-icon>keyboard_arrow_right</md-icon></button>
+                <button md-button class="vertical-menu-item">网络拓扑配置<md-icon class="menu-icon">keyboard_arrow_right</md-icon></button>
                 <div id="adjnodes_config" class="nav_level_2">
                   <button md-button>邻接节点配置</button>
                   <div class="nav_level_3">

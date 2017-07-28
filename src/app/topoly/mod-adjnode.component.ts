@@ -26,6 +26,7 @@ export class ModAdjnodeComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location
   ) {
+    this.node = {id:0, ipaddr:'', ipver:4, port:0, hostname:'', domain:'', type:1};
     this.createForm();
   }
 
@@ -33,21 +34,26 @@ export class ModAdjnodeComponent implements OnInit {
     this.route.paramMap
               .switchMap((params: ParamMap) => {
                 let id = +params.get('id');
-                alert("id:"+id);
                 return this.adjnodeService.getAdjnode(+id);
               } )
               .subscribe(node => {
-                this.node = node;
-                this.adjnodeForm.setValue({
-                  id: this.node.id,
-                  ipaddr: this.node.ipaddr,
-                  ipver: this.node.ipver,
-                  port: this.node.port,
-                  hostname: this.node.hostname,
-                  domain: this.node.domain,
-                  type: this.node.type
-                })
-              });
+                    if (node != null) {
+                      this.node = node;
+                    } else {
+                      this.node = {id:0, ipaddr:'', ipver:4, port:0, hostname:'', domain:'', type:1};
+                    }
+                    this.adjnodeForm.setValue({
+                      id: this.node.id,
+                      ipaddr: this.node.ipaddr,
+                      ipver: this.node.ipver,
+                      port: this.node.port,
+                      hostname: this.node.hostname,
+                      domain: this.node.domain,
+                      type: this.node.type
+                    });
+                  },
+                  err => {}
+              );
   }
 
   createForm() {
@@ -60,6 +66,17 @@ export class ModAdjnodeComponent implements OnInit {
       domain : '',
       type : 1
     });
+  }
+
+  onSubmit() {
+    this.node = this.adjnodeForm.value;
+    this.adjnodeService.update(this.node)
+                       .subscribe(node => {
+                                     alert("node:" + JSON.stringify(node));
+                                     this.goBack();
+                                  },
+                                  err => alert(err.message)
+                                 );
   }
 
   goBack(): void {

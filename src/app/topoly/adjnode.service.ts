@@ -34,6 +34,13 @@ export class AdjnodeService {
         .map(res => res.json());
   }
 
+  update(node: Adjnode): Observable<Adjnode> {
+    console.log("adjnode.service:create");
+    return this.http
+        .put(this.adjnodesUrl, JSON.stringify(node), {headers: this.headers})
+        .map(res => res.json());
+  }
+
   delete(id: number): Observable<void> {
     const url = `${this.adjnodesUrl}/${id}`;
     console.log("adjnode.service:delete " + url);
