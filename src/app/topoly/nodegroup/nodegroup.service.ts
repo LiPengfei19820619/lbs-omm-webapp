@@ -21,7 +21,7 @@ export class NodegroupService {
                     .map(this.extractData);
   }
 
-  getAdjnode(id: number): Observable<Nodegroup> {
+  getNodegroup(id: number): Observable<Nodegroup> {
     const url = `${this.nodegroupsUrl}/${id}`;
 
     return this.http.get(url)

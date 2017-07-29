@@ -1,0 +1,15 @@
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;}
+
+.toolbar-item {
+    flex: 10
+}
+
+.mat-button, .mat-fab, .mat-icon-button, .mat-mini-fab, .mat-raised-button {
+    
+    min-width: 40px;
+    line-height: 36px;
+    padding: 0;
+}

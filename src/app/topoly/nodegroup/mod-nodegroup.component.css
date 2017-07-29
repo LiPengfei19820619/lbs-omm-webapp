@@ -1,0 +1,17 @@
+.mod-nodegroup-form {
+    width: 80%;
+    min-width: 500px;
+    padding-left: 20px;
+}
+
+.mod-nodegroup-full-width {
+    width: 100%;
+}
+
+.mod-nodegroup-half-width {
+    width: 50%;
+}
+
+.mod-nodegroup-name {
+    width: 60%;
+}

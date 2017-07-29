@@ -1,0 +1,25 @@
+<md-toolbar>修改节点组</md-toolbar>
+
+<form [formGroup]="nodegroupForm" (ngSubmit)="onSubmit()" novalidate class="mod-nodegroup-form">
+
+  <md-input-container class="mod-nodegroup-full-width">
+    <input type="number" mdInput placeholder="节点组编号" formControlName="id">
+  </md-input-container>
+
+  <div class="mod-nodegroup-full-width" fxLayout="row" fxLayoutAlign="space-between center">
+      <md-input-container>
+          <input type="number" mdInput placeholder="节点组类型" value="1" formControlName="type">
+        </md-input-container>
+        
+        <md-input-container class="mod-nodegroup-name">
+          <input mdInput placeholder="节点组名称" formControlName="name">
+        </md-input-container>
+  </div>
+  
+  <div class="mod-nodegroup-half-width" fxLayout="row" fxLayoutAlign="space-around center">
+    <button md-fab type="submit"><md-icon>check</md-icon>确定</button>  &nbsp;
+    <button md-fab type="reset" (click)="goBack()"><md-icon>cancel</md-icon>取消</button>
+  </div>
+</form>
+
+

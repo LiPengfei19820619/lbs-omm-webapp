@@ -6,13 +6,15 @@ import { AddAdjnodeComponent } from './topoly/adjnode/add-adjnode.component';
 import { ModAdjnodeComponent } from './topoly/adjnode/mod-adjnode.component';
 
 import { NodegroupsComponent } from './topoly/nodegroup/nodegroups.component';
+import { ModNodegroupComponent } from './topoly/nodegroup/mod-nodegroup.component';
 
 const routes : Routes = [
   {path: 'adjnodes', component: AdjnodesComponent},
   {path: 'add-adjnode', component: AddAdjnodeComponent},
   {path: 'mod-adjnode/:id', component: ModAdjnodeComponent},
 
-  {path: 'nodegroups', component: NodegroupsComponent}
+  {path: 'nodegroups', component: NodegroupsComponent},
+  {path: 'mod-nodegroup/:id', component: ModNodegroupComponent}
 ];
 
 @NgModule({

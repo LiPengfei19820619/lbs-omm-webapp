@@ -1,18 +1,12 @@
 <md-toolbar>
-  <span>所有节点组</span>
+  <span class="toolbar-item">所有节点组</span>
 
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
 
-  <span><a md-fab mdTooltip="增加一个新的节点组" routerLink="../add-adjnode"><md-icon>add</md-icon></a>
+  <span class="toolbar-item"><a md-fab mdTooltip="增加一个新的节点组" routerLink="../add-adjnode"><md-icon>add</md-icon></a>
   </span>
-
-  <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
-  <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
-  <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
+  
 </md-toolbar>
 
 <div class="example-container mat-elevation-z8">
@@ -25,7 +19,7 @@
     <ng-container cdkColumnDef="operation">
       <md-header-cell *cdkHeaderCellDef>  </md-header-cell>
       <md-cell *cdkCellDef="let row">
-        <a md-button mdTooltip="修改此邻接节点配置" [routerLink]="['/mod-adjnode', row.id]"><md-icon>edit</md-icon></a>
+        <a md-button mdTooltip="修改此邻接节点配置" [routerLink]="['/mod-nodegroup', row.id]"><md-icon>edit</md-icon></a>
         <a md-button mdTooltip="删除此邻接节点配置" (click)="deleteNode(row)"><md-icon>delete</md-icon></a>
       </md-cell>
     </ng-container>

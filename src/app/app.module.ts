@@ -26,6 +26,7 @@ import { AdjnodeService } from './topoly/adjnode/adjnode.service';
 
 import { NodegroupsComponent } from './topoly/nodegroup/nodegroups.component';
 import { NodegroupService } from './topoly/nodegroup/nodegroup.service';
+import { ModNodegroupComponent } from './topoly/nodegroup/mod-nodegroup.component';
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ import { NodegroupService } from './topoly/nodegroup/nodegroup.service';
     AdjnodesComponent,
     AddAdjnodeComponent,
     ModAdjnodeComponent,
-    NodegroupsComponent
+    NodegroupsComponent,
+    ModNodegroupComponent
   ],
   
   providers: [AdjnodeService, NodegroupService],
