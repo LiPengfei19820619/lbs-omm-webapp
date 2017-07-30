@@ -1,0 +1,42 @@
+<md-toolbar>
+  <span class="toolbar-item">所有节点组中的节点信息</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span class="toolbar-item"><a md-fab mdTooltip="增加一个节点组中的节点" routerLink="../add-groupnode"><md-icon>add</md-icon></a>
+  </span>
+  
+</md-toolbar>
+
+<div class="example-container mat-elevation-z8">
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Operation Column -->
+    <ng-container cdkColumnDef="operation">
+      <md-header-cell *cdkHeaderCellDef>  </md-header-cell>
+      <md-cell *cdkCellDef="let row">
+        <a md-button mdTooltip="将此节点从节点组中删除" (click)="deleteGroupnode(row)"><md-icon>delete</md-icon></a>
+      </md-cell>
+    </ng-container>
+
+    <!-- GroupID Column -->
+    <ng-container cdkColumnDef="groupid">
+      <md-header-cell *cdkHeaderCellDef> 节点组ID </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.groupid}} </md-cell>
+    </ng-container>
+
+    <!-- NodeID Column -->
+    <ng-container cdkColumnDef="nodeid">
+      <md-header-cell *cdkHeaderCellDef>节点ID</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.nodeid}} </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>
+

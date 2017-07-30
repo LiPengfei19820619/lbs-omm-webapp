@@ -9,6 +9,9 @@ import { NodegroupsComponent } from './topoly/nodegroup/nodegroups.component';
 import { AddNodegroupComponent } from './topoly/nodegroup/add-nodegroup.component';
 import { ModNodegroupComponent } from './topoly/nodegroup/mod-nodegroup.component';
 
+import { GroupnodesComponent } from './topoly/groupnode/groupnodes.component';
+import { AddGroupnodeComponent } from './topoly/groupnode/add-groupnode.component';
+
 const routes : Routes = [
   {path: 'adjnodes', component: AdjnodesComponent},
   {path: 'add-adjnode', component: AddAdjnodeComponent},
@@ -16,7 +19,10 @@ const routes : Routes = [
 
   {path: 'nodegroups', component: NodegroupsComponent},
   {path: 'add-nodegroup', component: AddNodegroupComponent},
-  {path: 'mod-nodegroup/:id', component: ModNodegroupComponent}
+  {path: 'mod-nodegroup/:id', component: ModNodegroupComponent},
+
+  {path: 'groupnodes', component: GroupnodesComponent},
+  {path: 'add-groupnode', component: AddGroupnodeComponent}
 ];
 
 @NgModule({

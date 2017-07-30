@@ -25,9 +25,13 @@ import { AdjnodesComponent } from './topoly/adjnode/adjnodes.component';
 import { AdjnodeService } from './topoly/adjnode/adjnode.service';
 
 import { NodegroupsComponent } from './topoly/nodegroup/nodegroups.component';
-import { NodegroupService } from './topoly/nodegroup/nodegroup.service';
 import { ModNodegroupComponent } from './topoly/nodegroup/mod-nodegroup.component';
 import { AddNodegroupComponent } from './topoly/nodegroup/add-nodegroup.component';
+import { NodegroupService } from './topoly/nodegroup/nodegroup.service';
+
+import { GroupnodesComponent } from './topoly/groupnode/groupnodes.component';
+import { AddGroupnodeComponent } from './topoly/groupnode/add-groupnode.component';
+import { GroupnodeService } from './topoly/groupnode/groupnode.service';
 
 @NgModule({
   imports: [
@@ -55,10 +59,12 @@ import { AddNodegroupComponent } from './topoly/nodegroup/add-nodegroup.componen
     ModAdjnodeComponent,
     NodegroupsComponent,
     ModNodegroupComponent,
-    AddNodegroupComponent
+    AddNodegroupComponent,
+    GroupnodesComponent,
+    AddGroupnodeComponent
   ],
   
-  providers: [AdjnodeService, NodegroupService],
+  providers: [AdjnodeService, NodegroupService, GroupnodeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
