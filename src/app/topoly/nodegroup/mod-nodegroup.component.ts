@@ -36,11 +36,14 @@ export class ModNodegroupComponent implements OnInit {
                 return this.nodegroupService.getNodegroup(+id);
               } )
               .subscribe(group => {
-                    if (group != null) {
+                    if (group.id) {
+                      console.log("group not null:" + group.id);
                       this.group = group;
                     } else {
                       this.group = new Nodegroup();
                       this.group.id = 0;
+                      this.group.type = 1;
+                      this.group.name = "";
                     }
                     console.log("this.group.id:" + this.group.id);
                     this.nodegroupForm.setValue({
