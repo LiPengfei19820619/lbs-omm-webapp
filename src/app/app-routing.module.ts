@@ -12,6 +12,10 @@ import { ModNodegroupComponent } from './topoly/nodegroup/mod-nodegroup.componen
 import { GroupnodesComponent } from './topoly/groupnode/groupnodes.component';
 import { AddGroupnodeComponent } from './topoly/groupnode/add-groupnode.component';
 
+import { SecurityctrlPropertyComponent } from './securityctrl/securityctrl-property.component';
+import { AddSecurityctrlPropertyComponent } from './securityctrl/add-securityctrl-property.component';
+import { ModSecurityctrlPropertyComponent } from './securityctrl/mod-securityctrl-property.component';
+
 const routes : Routes = [
   {path: 'adjnodes', component: AdjnodesComponent},
   {path: 'add-adjnode', component: AddAdjnodeComponent},
@@ -22,7 +26,11 @@ const routes : Routes = [
   {path: 'mod-nodegroup/:id', component: ModNodegroupComponent},
 
   {path: 'groupnodes', component: GroupnodesComponent},
-  {path: 'add-groupnode', component: AddGroupnodeComponent}
+  {path: 'add-groupnode', component: AddGroupnodeComponent},
+
+  {path: 'securityctrl-property', component: SecurityctrlPropertyComponent},
+  {path: 'add-securityctrl-property', component: AddSecurityctrlPropertyComponent},
+  {path: 'mod-securityctrl-property', component: ModSecurityctrlPropertyComponent}
 ];
 
 @NgModule({
