@@ -1,3 +1,20 @@
-<p>
-  add-groupnode works!
-</p>
+<md-toolbar>增加节点组中的节点</md-toolbar>
+
+<form [formGroup]="groupnodeForm" (ngSubmit)="onSubmit()" novalidate class="add-groupnode-form">
+  
+  <div class="add-groupnode-full-width" fxLayout="row" fxLayoutAlign="start center">
+      <md-input-container>
+          <input type="number" mdInput placeholder="节点组编号" value="0" formControlName="groupid">
+        </md-input-container>
+        
+        <md-input-container>
+          <input type="number" mdInput placeholder="节点编号" value="0" formControlName="nodeid">
+        </md-input-container>
+  </div>
+  
+  <div class="add-groupnode-half-width" fxLayout="row" fxLayoutAlign="space-around center">
+    <button md-fab type="submit"><md-icon>check</md-icon>确定</button>  &nbsp;
+    <button md-fab type="reset" (click)="cancel()"><md-icon>cancel</md-icon>取消</button>
+  </div>
+</form>
+

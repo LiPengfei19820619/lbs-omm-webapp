@@ -1,0 +1,14 @@
+.add-groupnode-form {
+    width: 80%;
+    min-width: 500px;
+    padding-left: 20px;
+}
+
+.add-groupnode-full-width {
+    width: 100%;
+}
+
+.add-groupnode-half-width {
+    width: 30%;
+}
+
