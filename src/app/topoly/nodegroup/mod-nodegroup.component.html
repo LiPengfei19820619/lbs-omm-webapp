@@ -3,7 +3,7 @@
 <form [formGroup]="nodegroupForm" (ngSubmit)="onSubmit()" novalidate class="mod-nodegroup-form">
 
   <md-input-container class="mod-nodegroup-full-width">
-    <input type="number" mdInput placeholder="节点组编号" formControlName="id">
+    <input type="number" mdInput placeholder="节点组编号" value="0" formControlName="id">
   </md-input-container>
 
   <div class="mod-nodegroup-full-width" fxLayout="row" fxLayoutAlign="space-between center">

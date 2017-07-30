@@ -24,6 +24,16 @@ export class NodegroupsComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteNodegroup(row: Nodegroup){
+    if (confirm("是否确认删除此节点组，节点组编号: " + row.id)) {
+      this.nodegroupService.delete(row.id)
+      .subscribe(res => {
+        alert("删除节点组成功");
+      },
+      err => alert(err.manage));
+    }
+  }
+
 }
 
 /**

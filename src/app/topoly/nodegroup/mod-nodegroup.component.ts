@@ -15,63 +15,65 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./mod-nodegroup.component.css']
 })
 export class ModNodegroupComponent implements OnInit {
-  @Input() group: Nodegroup
+  group: Nodegroup
   
-    nodegroupForm: FormGroup;
-  
-    constructor(
-      private fb: FormBuilder,
-      private nodegroupService: NodegroupService,
-      private route: ActivatedRoute,
-      private location: Location
-    ) {
-      this.group = {id:0, type:1, name:""};
-      this.createForm();
-    }
-  
-    ngOnInit(): void {
-      this.route.paramMap
-                .switchMap((params: ParamMap) => {
-                  let id = +params.get('id');
-                  return this.nodegroupService.getNodegroup(+id);
-                } )
-                .subscribe(group => {
-                      if (group != null) {
-                        this.group = group;
-                      } else {
-                        this.group = {id:0, type:1, name:""};
-                      }
-                      this.nodegroupForm.setValue({
-                        id: this.group.id,
-                        type: this.group.type,
-                        name: this.group.name
-                      });
-                    },
-                    err => {}
-                );
-    }
-  
-    createForm() {
-      this.nodegroupForm = this.fb.group({
-        id : 0,
-        type : 1,
-        name: ""
-      });
-    }
-  
-    onSubmit() {
-      this.group = this.nodegroupForm.value;
-      this.nodegroupService.update(this.group)
-                         .subscribe(group => {
-                                       alert("修改节点组成功");
-                                       this.goBack();
-                                    },
-                                    err => alert(err.message)
-                                   );
-    }
-  
-    goBack(): void {
-      this.location.back();
-    }
+  nodegroupForm: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+    private nodegroupService: NodegroupService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {
+    this.group = new Nodegroup();
+    this.createForm();
+  }
+
+  ngOnInit(): void {
+    this.route.paramMap
+              .switchMap((params: ParamMap) => {
+                let id = +params.get('id');
+                return this.nodegroupService.getNodegroup(+id);
+              } )
+              .subscribe(group => {
+                    if (group != null) {
+                      this.group = group;
+                    } else {
+                      this.group = new Nodegroup();
+                      this.group.id = 0;
+                    }
+                    console.log("this.group.id:" + this.group.id);
+                    this.nodegroupForm.setValue({
+                      id: this.group.id,
+                      type: this.group.type,
+                      name: this.group.name
+                    });
+                  },
+                  err => {}
+              );
+  }
+
+  createForm() {
+    this.nodegroupForm = this.fb.group({
+      id : 0,
+      type : 1,
+      name: ""
+    });
+  }
+
+  onSubmit() {
+    this.group = this.nodegroupForm.value;
+    this.nodegroupService.update(this.group)
+                        .subscribe(group => {
+                                      alert("修改节点组成功");
+                                      this.goBack();
+                                  },
+                                  err => alert(err.message)
+                                  );
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 
 }
