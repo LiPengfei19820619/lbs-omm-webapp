@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Router } from '@angular/router';
+
 import { Location }                 from '@angular/common';
 
 import { SecurityctrlProperty } from './securityctrl-property';
@@ -20,7 +19,6 @@ export class ModSecurityctrlPropertyComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private propertyService: SecurityctrlPropertyService,
-    private route: ActivatedRoute,
     private location: Location
   ) {
     this.property = new SecurityctrlProperty();
