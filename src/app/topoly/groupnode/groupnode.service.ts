@@ -51,9 +51,8 @@ export class GroupnodeService {
   extractData(result: Response): Groupnode[] {
     return result.json().map(groupnode => {
       return {
-        id: groupnode.id,
-        type: groupnode.type,
-        name: groupnode.name
+        groupid: groupnode.groupid,
+        nodeid: groupnode.nodeid
       }
     });
   }
