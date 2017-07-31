@@ -1,3 +1,39 @@
-<p>
-  mod-securityctrl-property works!
-</p>
+<md-toolbar>修改安全管控属性配置</md-toolbar>
+
+<form [formGroup]="propertyForm" (ngSubmit)="onSubmit()" novalidate class="mod-securityctrl-property-form">
+
+  <div class="mod-securityctrl-property-full-width" fxLayout="row" fxLayoutAlign="space-between center">
+      <md-input-container>
+          <input mdInput placeholder="IP地址" formControlName="ipaddr">
+        </md-input-container>
+        
+        <md-input-container>
+          <input type="number" mdInput placeholder="IP版本" formControlName="ipver">
+        </md-input-container>
+
+        <md-input-container>
+          <input type="number" mdInput placeholder="端口号" formControlName="port">
+        </md-input-container>
+  </div>
+
+  <div class="mod-securityctrl-property-full-width" fxLayout="row" fxLayoutAlign="space-between center">
+    <md-input-container class="mod-securityctrl-property-name">
+        <input mdInput placeholder="主机名" formControlName="hostname">
+      </md-input-container>
+      
+      <md-input-container class="mod-securityctrl-property-name">
+        <input mdInput placeholder="域名" formControlName="domain">
+      </md-input-container>
+
+      <md-input-container>
+        <input type="number" mdInput placeholder="节点组编号" formControlName="nodegroup">
+      </md-input-container>
+</div>
+  
+  <div class="mod-securityctrl-property-half-width" fxLayout="row" fxLayoutAlign="space-around center">
+    <button md-fab type="submit"><md-icon>check</md-icon>确定</button>  &nbsp;
+    <button md-fab type="reset" (click)="goBack()"><md-icon>cancel</md-icon>取消</button>
+  </div>
+</form>
+
+

@@ -1,0 +1,17 @@
+.mod-securityctrl-property-form {
+    width: 80%;
+    min-width: 500px;
+    padding-left: 20px;
+}
+
+.mod-securityctrl-property-full-width {
+    width: 100%;
+}
+
+.mod-securityctrl-property-half-width {
+    width: 50%;
+}
+
+.mod-securityctrl-property-name {
+    width: 40%;
+}
