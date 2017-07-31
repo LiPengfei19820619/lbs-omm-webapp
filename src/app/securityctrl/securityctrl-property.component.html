@@ -1,3 +1,66 @@
-<p>
-  securityctrl-property works!
-</p>
+<md-toolbar>
+  <span class="toolbar-item">安全管控属性配置</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span class="toolbar-item"><a md-fab mdTooltip="增加安全管控属性配置" routerLink="../add-securityctrl-property"><md-icon>add</md-icon></a>
+  </span>
+  
+</md-toolbar>
+
+<div class="example-container mat-elevation-z8">
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Operation Column -->
+    <ng-container cdkColumnDef="operation">
+      <md-header-cell *cdkHeaderCellDef>  </md-header-cell>
+      <md-cell *cdkCellDef="let row">
+        <a md-button mdTooltip="修改安全管控属性配置" routerLink="/mod-securityctrl-property"><md-icon>edit</md-icon></a>
+      </md-cell>
+    </ng-container>
+
+    <!-- IPAddr Column -->
+    <ng-container cdkColumnDef="ipaddr">
+      <md-header-cell *cdkHeaderCellDef> IP地址 </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.ipaddr}} </md-cell>
+    </ng-container>
+
+    <!-- IPVer Column -->
+    <ng-container cdkColumnDef="ipver">
+      <md-header-cell *cdkHeaderCellDef>IP版本</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.ipver}} </md-cell>
+    </ng-container>
+
+    <!-- Port Column -->
+    <ng-container cdkColumnDef="port">
+      <md-header-cell *cdkHeaderCellDef>端口</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.port}} </md-cell>
+    </ng-container>
+
+    <!-- Hostname Column -->
+    <ng-container cdkColumnDef="hostname">
+      <md-header-cell *cdkHeaderCellDef>主机名 </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.hostname}} </md-cell>
+    </ng-container>
+
+    <!-- Domain Column -->
+    <ng-container cdkColumnDef="domain">
+      <md-header-cell *cdkHeaderCellDef>域名</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.domain}} </md-cell>
+    </ng-container>
+
+    <!-- NodeGroupID Column -->
+    <ng-container cdkColumnDef="nodegroupid">
+      <md-header-cell *cdkHeaderCellDef>节点组编号</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.nodegroup}} </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>
+

@@ -36,6 +36,7 @@ import { GroupnodeService } from './topoly/groupnode/groupnode.service';
 import { SecurityctrlPropertyComponent } from './securityctrl/securityctrl-property.component';
 import { AddSecurityctrlPropertyComponent } from './securityctrl/add-securityctrl-property.component';
 import { ModSecurityctrlPropertyComponent } from './securityctrl/mod-securityctrl-property.component';
+import { SecurityctrlPropertyService } from './securityctrl/securityctrl-property.service';
 
 @NgModule({
   imports: [
@@ -71,7 +72,7 @@ import { ModSecurityctrlPropertyComponent } from './securityctrl/mod-securityctr
     ModSecurityctrlPropertyComponent
   ],
   
-  providers: [AdjnodeService, NodegroupService, GroupnodeService],
+  providers: [AdjnodeService, NodegroupService, GroupnodeService, SecurityctrlPropertyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
