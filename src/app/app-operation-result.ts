@@ -1,4 +1,9 @@
 export class OperationResult {
-    result: string;
-    reason: string;
+    
+    error: ErrorInfo;
+}
+
+export class ErrorInfo {
+    constructor(public result: string, public reason: string) {
+    }
 }

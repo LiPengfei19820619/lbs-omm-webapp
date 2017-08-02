@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Location }                 from '@angular/common';
 
+import { OperationResult } from '../../app-operation-result';
+
 import { Nodegroup } from './nodegroup';
 import { NodegroupService } from './nodegroup.service';
 
@@ -44,11 +46,22 @@ export class AddNodegroupComponent implements OnChanges {
                                       alert("result:" + JSON.stringify(result));
                                       this.route.navigate(['nodegroups']);
                                     },
-                                    err => alert(err.message));
+                                    err => this.handleError(err),
+                                    () => { alert("complete")});
   }
 
   cancel(): void {
     this.location.back();
+  }
+
+  handleError(error: any) {
+    alert("typeof(error):" + typeof(error) + ",typeof(error._body):" + error._body);
+
+    let res : OperationResult = JSON.parse(error._body);
+
+    let info = res.error;
+
+    alert("增加节点组失败，原因：" + info.reason)
   }
 
 }
