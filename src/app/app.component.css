@@ -58,8 +58,9 @@ header, footer {
   background-color: #A9A9A9;
 }
 
-/* .menu-icon{
-  position: absolute;
+.menu-icon{
+  transform: rotate(90deg);
+  /* position: absolute;
   top: 0;
   right: 0;
   margin: 4px;
@@ -68,5 +69,5 @@ header, footer {
   display: inline-block;
   fill: currentColor;
   height: 24px;
-  width: 24px;
-} */
+  width: 24px; */
+}
