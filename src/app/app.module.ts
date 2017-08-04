@@ -37,6 +37,7 @@ import { SecurityctrlPropertyComponent } from './securityctrl/securityctrl-prope
 import { AddSecurityctrlPropertyComponent } from './securityctrl/add-securityctrl-property.component';
 import { ModSecurityctrlPropertyComponent } from './securityctrl/mod-securityctrl-property.component';
 import { SecurityctrlPropertyService } from './securityctrl/securityctrl-property.service';
+import { SideMenuComponent } from './ui/side-menu/side-menu.component';
 
 @NgModule({
   imports: [
@@ -69,7 +70,8 @@ import { SecurityctrlPropertyService } from './securityctrl/securityctrl-propert
     AddGroupnodeComponent,
     SecurityctrlPropertyComponent,
     AddSecurityctrlPropertyComponent,
-    ModSecurityctrlPropertyComponent
+    ModSecurityctrlPropertyComponent,
+    SideMenuComponent
   ],
   
   providers: [AdjnodeService, NodegroupService, GroupnodeService, SecurityctrlPropertyService],

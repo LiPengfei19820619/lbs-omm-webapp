@@ -1,0 +1,38 @@
+.nav_level_1 {
+    padding-left: 0;
+  }
+  
+  .nav_level_2 {
+    padding-left: 5px;
+  }
+  
+  .nav_level_3 {
+    padding-left: 10px;
+  }
+  
+  .vertical-menu-item {
+    text-align: left;
+    width: 93%;
+    padding: 5px;
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .vertical-menu-item:hover {
+    cursor: pointer;
+    background-color: #A9A9A9;
+  }
+  
+  .menu-icon{
+    /* transform: rotate(90deg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 4px;
+  
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 24px; */
+  }
