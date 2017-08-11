@@ -23,4 +23,8 @@ export class MenuItemComponent implements OnInit {
     this.nodeChildren = this.node.children;
   }
 
+  headerClicked() {
+    
+  }
+
 }

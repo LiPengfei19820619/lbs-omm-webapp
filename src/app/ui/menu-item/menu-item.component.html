@@ -1,27 +1,22 @@
 <div *ngIf="!node.children">
-  <a href="{{node.url}}" [ngClass]="classes" title="{{node.tooltip}}"
-    class="vertical-menu-item">
-    {{node.title}}
-  </a>
+  <a md-list-item routerLink="{{node.url}}" routerLinkActive="active" title="{{node.tooltip}}" class="vertical-menu-item">{{node.title}}</a>
 </div>
 
 <div *ngIf="node.children">
-  <a *ngIf="node.url != ''" href="{{node.url}}" [ngClass]="classes" title="{{node.tooltip}}"
-    (click)="headerClicked()" class="vertical-menu-item heading">
+  <a *ngIf="node.url != ''" md-list-item routerLink="{{node.url}}" routerLinkActive="active"
+     title="{{node.tooltip}}" (click)="headerClicked()" class="vertical-menu-item heading">
     {{node.title}}
-    <md-icon class="rotating-icon" svgIcon="keyboard_arrow_right"></md-icon>
+    <md-icon class="rotating-icon">keyboard_arrow_right</md-icon>
   </a>
 
-  <button *ngIf="node.url == ''" type="button" [ngClass]="classes" title="{{node.tooltip}}"
-    (click)="headerClicked()" class="vertical-menu-item heading"
-    [attr.aria-pressed]="isExpanded">
+  <button *ngIf="node.url == ''" class="vertical-menu-item heading"  title="{{node.tooltip}}"
+          fxLayout="row" fxLayoutAlign="space-between center"
+          (click)="headerClicked()">
     {{node.title}}
-    <md-icon class="rotating-icon" svgIcon="keyboard_arrow_right"></md-icon>
+    <md-icon class="rotating-icon">keyboard_arrow_right</md-icon>
   </button>
 
   <div class="heading-children" [ngClass]="classes">
-    <app-menu-item *ngFor="let node of nodeChildren" [level]="level + 1" [isWide]="isWide"
-    [isParentExpanded]="isExpanded"
-    [node]="node"></app-menu-item>
+    <app-menu-item *ngFor="let node of nodeChildren" [level]="level + 1" [isWide]="isWide" [isParentExpanded]="isExpanded" [node]="node"></app-menu-item>
   </div>
 </div>

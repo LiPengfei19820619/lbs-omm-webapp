@@ -12,8 +12,14 @@ export class SideMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.nodes = [{url: "", title: "基本属性配置", tooltip: "配置基本属性", hidden: false, children: [
-                                   {url: "/", title: "端口配置", tooltip: "配置端口", hidden: false, children: []}]
+    this.nodes = [{url: "", title: "安全管控配置", tooltip: "配置安全管控相关属性", hidden: false, children: [
+                                   {url: "/", title: "安全管控基本属性配置", tooltip: "配置安全管控基本属性", hidden: false, children: [
+                                        {url: "/", title: "查看安全管控基本属性配置", tooltip: "查看安全管控基本属性", hidden: false, children: null},
+                                        {url: "/", title: "增加管控基本属性配置", tooltip: "增加安全管控基本属性", hidden: false, children: null},
+                                        {url: "/", title: "修改管控基本属性配置", tooltip: "修改安全管控基本属性", hidden: false, children: null},
+                                        {url: "/", title: "删除管控基本属性配置", tooltip: "删除安全管控基本属性", hidden: false, children: null}
+                                   ]},
+                                   {url: "/", title: "安全管控节点配置", tooltip: "配置安全管控节点", hidden: false, children: null}]
                   }];
   }
 
