@@ -1,15 +1,4 @@
-<div class="nav_level_1">
-  <button id="mem-query-button" class="vertical-menu-item" (click)="menuTreeClicked('mem-query-icon', 'mem-query-nodes')" fxLayout="row" fxLayoutAlign="space-between center">
-    <div>内存库查询</div>
-    <md-icon id="mem-query-icon" class="menu-icon">keyboard_arrow_right</md-icon>
-  </button>
-  <div id="mem-query-nodes" class="nav_level_2">
-    <md-nav-list dense>
-      <a md-list-item routerLink="/securityctrl-property" routerLinkActive="active">查看安全管控配置</a>
-      <a md-list-item routerLink="/adjnodes" routerLinkActive="active">查看邻接节点配置</a>
-      <a md-list-item routerLink="/nodegroups" routerLinkActive="active">查看节点组配置</a>
-      <a md-list-item routerLink="/groupnodes" routerLinkActive="active">查看节点组内节点配置</a>
-    </md-nav-list>
-  </div>
-</div>
+
+
+<app-menu-item *ngFor="let node of nodes" [node]="node"></app-menu-item>
 

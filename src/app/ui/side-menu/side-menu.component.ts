@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NavNode } from '../nav-node/nav-node';
 
 @Component({
   selector: 'app-side-menu',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-menu.component.css']
 })
 export class SideMenuComponent implements OnInit {
+  @Input() nodes: NavNode[];
 
   constructor() { }
 
   ngOnInit() {
+    this.nodes = [{url: "", title: "基本属性配置", tooltip: "配置基本属性", hidden: false, children: [
+                                   {url: "/", title: "端口配置", tooltip: "配置端口", hidden: false, children: []}]
+                  }];
   }
 
   menuTreeClicked(iconId: string, nodesId: string) {
