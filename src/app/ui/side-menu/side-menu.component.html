@@ -1,5 +1,10 @@
 
 <md-nav-list dense>
-  <app-menu-item *ngFor="let node of nodes" [node]="node"></app-menu-item>
+  <tree-root [nodes]="nodes">
+    <ng-template #treeNodeTemplate let-node let-index="index">
+      <a *ngIf="node.data.url" routerLink="{{node.data.url}}" routerLinkActive="active" title="{{node.data.tooltip}}" class="vertical-menu-item">{{node.data.title}}</a>
+      
+      <button *ngIf="!node.data.url" class="vertical-menu-item">{{ node.data.title }}</button>
+    </ng-template>
+  </tree-root>
 </md-nav-list>
-

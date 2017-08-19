@@ -16,6 +16,8 @@ import { MdListModule } from '@angular/material';
 
 import {CdkTableModule} from '@angular/cdk';
 
+import { TreeModule } from 'angular-tree-component';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -39,7 +41,6 @@ import { ModSecurityctrlPropertyComponent } from './securityctrl/mod-securityctr
 import { SecurityctrlPropertyService } from './securityctrl/securityctrl-property.service';
 import { SideMenuComponent } from './ui/side-menu/side-menu.component';
 
-import { MenuItemComponent } from './ui/menu-item/menu-item.component';
 
 @NgModule({
   imports: [
@@ -58,6 +59,7 @@ import { MenuItemComponent } from './ui/menu-item/menu-item.component';
     ReactiveFormsModule,
     MdTableModule,
     CdkTableModule,
+    TreeModule,
     AppRoutingModule
   ],
   declarations: [
@@ -73,8 +75,7 @@ import { MenuItemComponent } from './ui/menu-item/menu-item.component';
     SecurityctrlPropertyComponent,
     AddSecurityctrlPropertyComponent,
     ModSecurityctrlPropertyComponent,
-    SideMenuComponent,
-    MenuItemComponent
+    SideMenuComponent
   ],
   
   providers: [AdjnodeService, NodegroupService, GroupnodeService, SecurityctrlPropertyService],
