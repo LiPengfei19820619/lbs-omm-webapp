@@ -17,52 +17,6 @@
       <md-sidenav-container class="example-container">
         <md-sidenav #sidenav mode="side" opened="false" class="example-sidenav">
           <nav>
-            <div id="topoly_config" class="nav_level_1">
-                <button class="vertical-menu-item" fxLayout="row" fxLayoutAlign="space-between center">
-                  <div>网络拓扑配置</div>
-                  <md-icon class="menu-icon">keyboard_arrow_right</md-icon>
-                </button>
-                <div id="adjnodes_config" class="nav_level_2">
-                  <button  class="vertical-menu-item" fxLayout="row" fxLayoutAlign="space-between center">邻接节点配置</button>
-                  <div class="nav_level_3">
-                      <md-nav-list dense>
-                        <a md-list-item routerLink="/adjnodes" routerLinkActive="active">查看邻接节点</a>
-                        <a md-list-item routerLink="/add-adjnode" routerLinkActive="active">增加邻接节点</a>
-                        <a md-list-item routerLink="/mod-adjnode/0" routerLinkActive="active">修改邻接节点</a>
-                      </md-nav-list>
-                  </div>
-                </div>
-                <div id="nodegroup_config" class="nav_level_2">
-                  <button  class="vertical-menu-item" fxLayout="row" fxLayoutAlign="space-between center">节点组配置</button>
-                  <div class="nav_level_3">
-                      <md-nav-list dense>
-                        <a md-list-item routerLink="/nodegroups" routerLinkActive="active">查看节点组</a>
-                        <a md-list-item routerLink="/add-nodegroup" routerLinkActive="active">增加节点组</a>
-                        <a md-list-item routerLink="/mod-nodegroup/0" routerLinkActive="active">修改节点组</a>
-                      </md-nav-list>
-                  </div>
-                </div>
-                <div id="node_in_group_config" class="nav_level_2">
-                  <button  class="vertical-menu-item" fxLayout="row" fxLayoutAlign="space-between center">节点组内节点配置</button>
-                  <div class="nav_level_3">
-                      <md-nav-list dense>
-                        <a md-list-item routerLink="/groupnodes" routerLinkActive="active">查看节点组内节点</a>
-                        <a md-list-item routerLink="/add-groupnode" routerLinkActive="active">增加节点组内节点</a>
-                      </md-nav-list>
-                  </div>
-                </div>
-            </div>
-            <div id="securityctrl_config" class="nav_level_1">
-              <button  class="vertical-menu-item" fxLayout="row" fxLayoutAlign="space-between center">安全管控属性配置</button>
-              <div class="nav_level_2">
-                <md-nav-list dense>
-                  <a md-list-item routerLink="/securityctrl-property" routerLinkActive="active">查看安全管控配置</a>
-                  <a md-list-item routerLink="/add-securityctrl-property" routerLinkActive="active">增加安全管控配置</a>
-                  <button  class="vertical-menu-item" fxLayout="row" fxLayoutAlign="space-between center">安全管控属性配置</button>
-                  <a md-list-item routerLink="/mod-securityctrl-property" routerLinkActive="active">修改安全管控配置</a>
-                </md-nav-list>
-              </div>
-            </div>
             <app-side-menu [nodes]="nodes"></app-side-menu>
           </nav>
           

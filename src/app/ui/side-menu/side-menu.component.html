@@ -1,4 +1,7 @@
-
+<md-input-container class="add-nodegroup-name">
+  <input mdInput placeholder="过滤">
+</md-input-container>
+<button md-raised-button>清除过滤</button>
 <md-nav-list dense>
   <tree-root [nodes]="nodes">
     <ng-template #treeNodeTemplate let-node let-index="index">
