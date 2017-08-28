@@ -1,13 +1,14 @@
-<md-input-container class="add-nodegroup-name">
-  <input mdInput placeholder="过滤">
-</md-input-container>
-<button md-raised-button>清除过滤</button>
+<div class="search-tree" fxLayout="row" fxLayoutAlign="space-between center">
+  <md-icon>search</md-icon>
+  <input placeholder="过滤">
+  <button md-mini-fab><md-icon>clear</md-icon></button>
+</div>
 <md-nav-list dense>
   <tree-root [nodes]="nodes">
     <ng-template #treeNodeTemplate let-node let-index="index">
       <a *ngIf="node.data.url" routerLink="{{node.data.url}}" routerLinkActive="active" title="{{node.data.tooltip}}" class="vertical-menu-item">{{node.data.title}}</a>
       
-      <button *ngIf="!node.data.url" class="vertical-menu-item">{{ node.data.title }}</button>
+      <button *ngIf="!node.data.url" class="vertical-menu-item heading">{{ node.data.title }}</button>
     </ng-template>
   </tree-root>
 </md-nav-list>
