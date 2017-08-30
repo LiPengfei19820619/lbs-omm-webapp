@@ -14,7 +14,7 @@ import { MdTooltipModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { MdListModule } from '@angular/material';
 
-import {CdkTableModule} from '@angular/cdk';
+import {CdkTableModule} from '@angular/cdk/table';
 
 import { TreeModule } from 'angular-tree-component';
 

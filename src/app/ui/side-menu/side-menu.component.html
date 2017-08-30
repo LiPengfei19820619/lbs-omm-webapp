@@ -1,8 +1,13 @@
-<div class="search-tree" fxLayout="row" fxLayoutAlign="space-between center">
+<div class="search-tree" fxLayout="row" fxLayoutAlign="start center">
   <md-icon>search</md-icon>
   <input placeholder="过滤">
   <button md-mini-fab><md-icon>clear</md-icon></button>
 </div>
+<md-icon>search</md-icon>
+<md-form-field floatPlaceholder="never">
+  <input type="tel" mdInput placeholder="Telephone">
+</md-form-field>
+<button md-mini-fab><md-icon>clear</md-icon></button>
 <md-nav-list dense>
   <tree-root [nodes]="nodes">
     <ng-template #treeNodeTemplate let-node let-index="index">
