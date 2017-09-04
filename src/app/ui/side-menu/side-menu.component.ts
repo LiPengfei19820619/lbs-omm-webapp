@@ -1,5 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavNode } from '../nav-node/nav-node';
+import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
+
+const actionMapping:IActionMapping = {
+  mouse: {
+    click: (tree, node, $event) => {
+      if (node.hasChildren) TREE_ACTIONS.TOGGLE_EXPANDED(tree, node, $event);
+    }
+  }
+};
 
 @Component({
   selector: 'app-side-menu',
@@ -55,6 +64,10 @@ export class SideMenuComponent implements OnInit {
       nodesElement.hidden = true;
       iconElement.style.transform = "";
     }
+  }
+
+  customTemplateStringOptions: ITreeOptions = {
+    actionMapping
   }
 
 }

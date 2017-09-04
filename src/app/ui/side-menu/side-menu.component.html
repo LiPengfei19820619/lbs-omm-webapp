@@ -1,13 +1,13 @@
 <div class="search-tree" fxLayout="row" fxLayoutAlign="start center">
   <md-icon>search</md-icon>
   <md-form-field floatPlaceholder="never">
-    <input type="tel" mdInput placeholder="Telephone">
+    <input type="text" mdInput placeholder="过滤">
   </md-form-field>
   <button md-mini-fab><md-icon>clear</md-icon></button>
 </div>
 
 <md-nav-list dense>
-  <tree-root [nodes]="nodes">
+  <tree-root #tree [nodes]="nodes" [options]="customTemplateStringOptions">
     <ng-template #treeNodeTemplate let-node let-index="index">
       <a *ngIf="node.data.url" routerLink="{{node.data.url}}" routerLinkActive="active" title="{{node.data.tooltip}}" class="vertical-menu-item">{{node.data.title}}</a>
       
